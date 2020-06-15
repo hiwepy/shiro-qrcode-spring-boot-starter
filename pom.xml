@@ -382,13 +382,13 @@
 	
 	<dependencyManagement>
 		<dependencies>
-			<!-- https://github.com/hiwepy/spring-boot-starter-shiro-biz -->
+			<!-- https://github.com/hiwepy/shiro-biz-spring-boot-starter -->
 			<dependency>
 				<groupId>com.github.hiwepy</groupId>
 				<artifactId>shiro-biz-spring-boot-starter</artifactId>
 				<version>${spring-boot-starter-shiro-biz.version}</version>
 			</dependency>
-			<!-- https://github.com/hiwepy/spring-boot-starter-zxing -->
+			<!-- https://github.com/hiwepy/zxing-spring-boot-starter -->
 			<dependency>
 				<groupId>com.github.hiwepy</groupId>
 				<artifactId>zxing-spring-boot-starter</artifactId>
@@ -470,12 +470,12 @@
 			<artifactId>commons-lang3</artifactId>
 		</dependency>
 	 
-		<!-- https://github.com/hiwepy/spring-boot-starter-shiro-biz -->
+		<!-- https://github.com/hiwepy/shiro-biz-spring-boot-starter -->
 		<dependency>
 			<groupId>com.github.hiwepy</groupId>
 			<artifactId>shiro-biz-spring-boot-starter</artifactId>
 		</dependency>
-		<!-- https://github.com/hiwepy/spring-boot-starter-zxing -->
+		<!-- https://github.com/hiwepy/zxing-spring-boot-starter -->
 		<dependency>
 			<groupId>com.github.hiwepy</groupId>
 			<artifactId>zxing-spring-boot-starter</artifactId>
