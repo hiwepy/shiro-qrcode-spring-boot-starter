@@ -62,4 +62,9 @@ public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccess
 
 	}
 
+	@Override
+	public int getOrder() {
+		return Integer.MAX_VALUE - 4;
+	}
+	
 }
