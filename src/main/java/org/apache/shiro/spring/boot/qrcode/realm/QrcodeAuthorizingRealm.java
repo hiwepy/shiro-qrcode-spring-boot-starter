@@ -1,7 +1,7 @@
 package org.apache.shiro.spring.boot.qrcode.realm;
 
 import org.apache.shiro.biz.realm.AbstractAuthorizingRealm;
-import org.apache.shiro.spring.boot.qrcode.token.QrcodeLoginToken;
+import org.apache.shiro.spring.boot.qrcode.token.QrcodeAuthenticationToken;
 
 /**
  * Qrcode AuthorizingRealm
@@ -11,7 +11,7 @@ public class QrcodeAuthorizingRealm extends AbstractAuthorizingRealm {
 
 	@Override
 	public Class<?> getAuthenticationTokenClass() {
-		return QrcodeLoginToken.class;// 此Realm只支持QrcodeLoginToken
+		return QrcodeAuthenticationToken.class;
 	}
 
 }

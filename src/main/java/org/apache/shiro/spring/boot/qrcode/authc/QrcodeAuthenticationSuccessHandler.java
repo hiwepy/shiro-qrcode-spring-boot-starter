@@ -27,7 +27,7 @@ import org.apache.shiro.biz.authc.AuthenticationSuccessHandler;
 import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 import org.apache.shiro.biz.utils.SubjectUtils;
 import org.apache.shiro.biz.utils.WebUtils;
-import org.apache.shiro.spring.boot.qrcode.token.QrcodeLoginToken;
+import org.apache.shiro.spring.boot.qrcode.token.QrcodeAuthenticationToken;
 import org.apache.shiro.subject.Subject;
 
 import com.google.common.collect.Maps;
@@ -37,16 +37,16 @@ public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccess
 
 	public QrcodeAuthenticationSuccessHandler() {
 	}
-	 
+
 	@Override
 	public boolean supports(AuthenticationToken token) {
-		return SubjectUtils.isAssignableFrom(token.getClass(), QrcodeLoginToken.class);
+		return SubjectUtils.isAssignableFrom(token.getClass(), QrcodeAuthenticationToken.class);
 	}
 
 	@Override
 	public void onAuthenticationSuccess(AuthenticationToken token, ServletRequest request, ServletResponse response,
 			Subject subject) {
-		
+
 		HttpServletRequest httpRequest = WebUtils.toHttp(request);
 		HttpServletResponse httpResponse = WebUtils.toHttp(response);
 
@@ -66,5 +66,5 @@ public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccess
 	public int getOrder() {
 		return Integer.MAX_VALUE - 4;
 	}
-	
+
 }
