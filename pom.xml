@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>com.github.hiwepy</groupId>
+	<groupId>io.github.hiwepy</groupId>
 	<artifactId>shiro-qrcode-spring-boot-starter</artifactId>
 	<description>Spring Boot Starter For Shiro With Qrcode</description>
 	<version>1.0.1.RELEASE</version>
@@ -378,13 +378,13 @@
 		<dependencies>
 			<!-- https://github.com/hiwepy/shiro-biz-spring-boot-starter -->
 			<dependency>
-				<groupId>com.github.hiwepy</groupId>
+				<groupId>io.github.hiwepy</groupId>
 				<artifactId>shiro-biz-spring-boot-starter</artifactId>
 				<version>${spring-boot-starter-shiro-biz.version}</version>
 			</dependency>
 			<!-- https://github.com/hiwepy/zxing-spring-boot-starter -->
 			<dependency>
-				<groupId>com.github.hiwepy</groupId>
+				<groupId>io.github.hiwepy</groupId>
 				<artifactId>zxing-spring-boot-starter</artifactId>
 				<version>${spring-boot-starter-zxing.version}</version>
 			</dependency>
@@ -466,12 +466,12 @@
 
 		<!-- https://github.com/hiwepy/shiro-biz-spring-boot-starter -->
 		<dependency>
-			<groupId>com.github.hiwepy</groupId>
+			<groupId>io.github.hiwepy</groupId>
 			<artifactId>shiro-biz-spring-boot-starter</artifactId>
 		</dependency>
 		<!-- https://github.com/hiwepy/zxing-spring-boot-starter -->
 		<dependency>
-			<groupId>com.github.hiwepy</groupId>
+			<groupId>io.github.hiwepy</groupId>
 			<artifactId>zxing-spring-boot-starter</artifactId>
 		</dependency>
 
