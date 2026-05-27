@@ -17,8 +17,8 @@ package org.apache.shiro.spring.boot.qrcode.authc;
 
 import java.nio.charset.StandardCharsets;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
