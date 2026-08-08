@@ -20,7 +20,7 @@ import org.apache.shiro.spring.boot.qrcode.QrcodeInfo;
 
 /**
  * TODO
- * @author 		： <a href="https://github.com/hiwepy">wandl</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public interface QrcodeRecognitionProvider {
 
