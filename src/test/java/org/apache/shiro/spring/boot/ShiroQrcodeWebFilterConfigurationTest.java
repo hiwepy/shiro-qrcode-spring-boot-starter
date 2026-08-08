@@ -13,17 +13,26 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package org.apache.shiro.spring.boot.qrcode.authc;
+package org.apache.shiro.spring.boot;
 
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.spring.boot.qrcode.QrcodeInfo;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * TODO
+ * Unit tests for {{ @link ShiroQrcodeWebFilterConfiguration }}.
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
-public interface QrcodeRecognitionProvider {
+@DisplayName("ShiroQrcodeWebFilterConfiguration Tests")
+class ShiroQrcodeWebFilterConfigurationTest {
 
-	QrcodeInfo loadQrcodeInfo(AuthenticationToken token);
-	
+    @Test
+    @DisplayName("Instance can be created via constructor")
+    void testInstantiation() {
+        ShiroQrcodeWebFilterConfiguration instance = new ShiroQrcodeWebFilterConfiguration();
+        assertThat(instance).isNotNull();
+    }
 }
