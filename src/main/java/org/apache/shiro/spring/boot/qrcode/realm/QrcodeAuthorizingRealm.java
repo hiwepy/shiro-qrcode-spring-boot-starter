@@ -5,7 +5,7 @@ import org.apache.shiro.spring.boot.qrcode.token.QrcodeAuthenticationToken;
 
 /**
  * Qrcode AuthorizingRealm
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 public class QrcodeAuthorizingRealm extends AbstractAuthorizingRealm {
 
