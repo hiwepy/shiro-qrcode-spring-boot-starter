@@ -17,8 +17,8 @@ package org.apache.shiro.spring.boot.qrcode.authc;
 
 import java.nio.charset.StandardCharsets;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
@@ -36,7 +36,7 @@ import com.alibaba.fastjson.JSONObject;
 
 /**
  *二维码扫码 认证 (authentication)过滤器
- * @author ： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  */
 @Slf4j
 public class QrcodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
