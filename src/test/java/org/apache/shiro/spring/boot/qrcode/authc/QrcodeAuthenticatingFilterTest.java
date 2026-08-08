@@ -15,15 +15,24 @@
  */
 package org.apache.shiro.spring.boot.qrcode.authc;
 
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.spring.boot.qrcode.QrcodeInfo;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * TODO
+ * Unit tests for {{ @link QrcodeAuthenticatingFilter }}.
+ *
  * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
  */
-public interface QrcodeRecognitionProvider {
+@DisplayName("QrcodeAuthenticatingFilter Tests")
+class QrcodeAuthenticatingFilterTest {
 
-	QrcodeInfo loadQrcodeInfo(AuthenticationToken token);
-	
+    @Test
+    @DisplayName("Instance can be created via constructor")
+    void testInstantiation() {
+        QrcodeAuthenticatingFilter instance = new QrcodeAuthenticatingFilter();
+        assertThat(instance).isNotNull();
+    }
 }
