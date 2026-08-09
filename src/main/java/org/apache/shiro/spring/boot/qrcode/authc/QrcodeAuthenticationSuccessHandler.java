@@ -32,7 +32,13 @@ import org.apache.shiro.subject.Subject;
 
 import com.google.common.collect.Maps;
 
-
+/**
+ * Success handler for QR code authentication.
+ * <p>Extracts user principal information after successful QR code authentication.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
 
 	public QrcodeAuthenticationSuccessHandler() {

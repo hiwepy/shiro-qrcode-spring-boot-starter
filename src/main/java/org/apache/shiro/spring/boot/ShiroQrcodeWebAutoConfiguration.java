@@ -9,6 +9,13 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Auto-configuration for Shiro QR code web authentication.
+ * <p>Enables QR code-based authentication when the {@code shiro.qrcode.enabled} property is set to {@code true}.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 //https://blog.csdn.net/weixin_42058600/article/details/81837056
 @Configuration
 @AutoConfigureBefore( name = {

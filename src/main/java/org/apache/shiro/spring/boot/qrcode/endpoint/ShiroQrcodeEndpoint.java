@@ -18,6 +18,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.beust.jcommander.internal.Maps;
 import com.google.zxing.spring.boot.ZxingQrCodeTemplate;
 
+/**
+ * REST endpoint for Shiro QR code-based login authentication.
+ * <p>Provides endpoints to generate QR codes and poll for login status.</p>
+ *
+ * @author [@Loong Wan](https://github.com/loong10k)
+ * @since 1.0.0
+ */
 @RestController("/authz/qrcode/")
 public class ShiroQrcodeEndpoint {
 	
