@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSONObject;
-import com.beust.jcommander.internal.Maps;
+import com.google.common.collect.Maps;
 import com.google.zxing.spring.boot.ZxingQrCodeTemplate;
 
 /**

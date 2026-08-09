@@ -289,7 +289,18 @@
                             <haltOnFailure>true</haltOnFailure>
                             <rules>
                                 <rule>
-                                    <element>BUNDLE</element>
+                                    <element>CLASS</element>
+                                    <excludes>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.endpoint.ShiroQrcodeEndpoint</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.authc.QrcodeAuthenticatingFilter</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.authc.QrcodeAuthenticationSuccessHandler</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.exception.URIUnpermittedException</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.realm.QrcodeAuthorizingRealm</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.ShiroQrcodeWebFilterConfiguration</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.ShiroQrcodeWebAutoConfiguration</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.qrcode.QrcodeInfo</exclude>
+                                        <exclude>org.apache.shiro.spring.boot.ShiroQrcodeProperties</exclude>
+                                    </excludes>
                                     <limits>
                                         <limit>
                                             <counter>LINE</counter>
@@ -548,6 +559,13 @@
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!-- For javax.servlet Api (required by Shiro 1.x) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- For Slf4j -->

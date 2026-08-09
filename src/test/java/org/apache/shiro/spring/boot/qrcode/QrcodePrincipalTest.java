@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * Unit tests for {{ @link QrcodePrincipal }}.
+ * Unit tests for {@link QrcodePrincipal}.
  *
  * @author [@Loong Wan](https://github.com/loong10k)
  * @since 1.0.0
@@ -34,5 +34,36 @@ class QrcodePrincipalTest {
     void testInstantiation() {
         QrcodePrincipal instance = new QrcodePrincipal();
         assertThat(instance).isNotNull();
+    }
+
+    @Test
+    @DisplayName("UUID getter and setter work correctly")
+    void testUuidGetterSetter() {
+        QrcodePrincipal principal = new QrcodePrincipal();
+        principal.setUuid("test-uuid-123");
+        assertThat(principal.getUuid()).isEqualTo("test-uuid-123");
+    }
+
+    @Test
+    @DisplayName("Default UUID is null")
+    void testDefaultUuid() {
+        QrcodePrincipal principal = new QrcodePrincipal();
+        assertThat(principal.getUuid()).isNull();
+    }
+
+    @Test
+    @DisplayName("UUID can be set to null")
+    void testUuidNull() {
+        QrcodePrincipal principal = new QrcodePrincipal();
+        principal.setUuid("test");
+        principal.setUuid(null);
+        assertThat(principal.getUuid()).isNull();
+    }
+
+    @Test
+    @DisplayName("Extends ShiroPrincipal")
+    void testExtendsShiroPrincipal() {
+        QrcodePrincipal principal = new QrcodePrincipal();
+        assertThat(principal).isInstanceOf(org.apache.shiro.biz.authz.principal.ShiroPrincipal.class);
     }
 }

@@ -15,13 +15,16 @@
  */
 package org.apache.shiro.spring.boot.qrcode.endpoint;
 
+import com.google.zxing.spring.boot.ZxingQrCodeTemplate;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
 /**
- * Unit tests for {{ @link ShiroQrcodeEndpoint }}.
+ * Unit tests for {@link ShiroQrcodeEndpoint}.
  *
  * @author [@Loong Wan](https://github.com/loong10k)
  * @since 1.0.0
@@ -30,9 +33,29 @@ import static org.assertj.core.api.Assertions.assertThat;
 class ShiroQrcodeEndpointTest {
 
     @Test
-    @DisplayName("Endpoint class can be instantiated")
+    @DisplayName("Endpoint class can be instantiated with dependencies")
     void testInstantiation() {
-        ShiroQrcodeEndpoint endpoint = new ShiroQrcodeEndpoint();
+        StringRedisTemplate redisTemplate = mock(StringRedisTemplate.class);
+        ZxingQrCodeTemplate qrcodeTemplate = mock(ZxingQrCodeTemplate.class);
+        ShiroQrcodeEndpoint endpoint = new ShiroQrcodeEndpoint(redisTemplate, qrcodeTemplate);
         assertThat(endpoint).isNotNull();
+    }
+
+    @Test
+    @DisplayName("getStringRedisTemplate returns the injected template")
+    void testGetRedisTemplate() {
+        StringRedisTemplate redisTemplate = mock(StringRedisTemplate.class);
+        ZxingQrCodeTemplate qrcodeTemplate = mock(ZxingQrCodeTemplate.class);
+        ShiroQrcodeEndpoint endpoint = new ShiroQrcodeEndpoint(redisTemplate, qrcodeTemplate);
+        assertThat(endpoint.getStringRedisTemplate()).isEqualTo(redisTemplate);
+    }
+
+    @Test
+    @DisplayName("getQrcodeTemplate returns the injected template")
+    void testGetQrcodeTemplate() {
+        StringRedisTemplate redisTemplate = mock(StringRedisTemplate.class);
+        ZxingQrCodeTemplate qrcodeTemplate = mock(ZxingQrCodeTemplate.class);
+        ShiroQrcodeEndpoint endpoint = new ShiroQrcodeEndpoint(redisTemplate, qrcodeTemplate);
+        assertThat(endpoint.getQrcodeTemplate()).isEqualTo(qrcodeTemplate);
     }
 }

@@ -17,17 +17,17 @@ package org.apache.shiro.spring.boot.qrcode.authc;
 
 import java.nio.charset.StandardCharsets;
 
-import jakarta.servlet.ServletRequest;
-import jakarta.servlet.ServletResponse;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
-import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.biz.authc.AuthcResponse;
-import org.apache.shiro.biz.utils.WebUtils;
+import org.apache.shiro.biz.utils.WebUtils2;
 import org.apache.shiro.biz.web.filter.authc.AbstractTrustableAuthenticatingFilter;
 import org.apache.shiro.biz.web.servlet.http.HttpStatus;
 import org.apache.shiro.subject.Subject;
+import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
@@ -38,8 +38,9 @@ import com.alibaba.fastjson.JSONObject;
  *二维码扫码 认证 (authentication)过滤器
  * @author [@Loong Wan](https://github.com/loong10k)
  */
-@Slf4j
 public class QrcodeAuthenticatingFilter extends AbstractTrustableAuthenticatingFilter {
+
+	private static final Logger LOG = LoggerFactory.getLogger(QrcodeAuthenticatingFilter.class);
 
 	public QrcodeAuthenticatingFilter() {
 		super();
@@ -72,14 +73,14 @@ public class QrcodeAuthenticatingFilter extends AbstractTrustableAuthenticatingF
 		if (isLoginRequest(request, response)) {
 
 			if (isLoginSubmission(request, response)) {
-				if (log.isTraceEnabled()) {
-					log.trace("Login submission detected.  Attempting to execute login.");
+				if (LOG.isTraceEnabled()) {
+					LOG.trace("Login submission detected.  Attempting to execute login.");
 				}
 				return executeLogin(request, response);
 			} else {
 				String mString = "Authentication url [" + getLoginUrl() + "] Not Http Post request.";
-				if (log.isTraceEnabled()) {
-					log.trace(mString);
+				if (LOG.isTraceEnabled()) {
+					LOG.trace(mString);
 				}
 
 				WebUtils.toHttp(response).setStatus(HttpStatus.SC_OK);
@@ -96,12 +97,12 @@ public class QrcodeAuthenticatingFilter extends AbstractTrustableAuthenticatingF
 		else {
 
 			String mString = "Attempting to access a path which requires authentication. ";
-			if (log.isTraceEnabled()) {
-				log.trace(mString);
+			if (LOG.isTraceEnabled()) {
+				LOG.trace(mString);
 			}
 
 			// Ajax 请求：响应json数据对象
-			if (WebUtils.isAjaxRequest(request)) {
+			if (WebUtils2.isAjaxRequest(request)) {
 
 				WebUtils.toHttp(response).setStatus(HttpStatus.SC_OK);
 				response.setContentType(MediaType.APPLICATION_JSON_VALUE);
