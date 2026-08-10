@@ -22,7 +22,7 @@ import com.google.zxing.spring.boot.ZxingQrCodeTemplate;
  * REST endpoint for Shiro QR code-based login authentication.
  * <p>Provides endpoints to generate QR codes and poll for login status.</p>
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @RestController("/authz/qrcode/")
@@ -43,7 +43,7 @@ public class ShiroQrcodeEndpoint {
 
 	/*
 	 * 前端点击二维码登录时，访问该接口获取二维码数据并在界面展示
-	 * @author [@Loong Wan](https://github.com/loong10k)
+	 * @author <a href="https://github.com/loong10k">Loong Wan</a>
 	 * @return
 	 * @throws Exception
 	 */
