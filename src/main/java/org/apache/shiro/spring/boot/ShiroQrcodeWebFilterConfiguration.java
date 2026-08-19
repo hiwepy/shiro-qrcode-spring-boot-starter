@@ -21,6 +21,12 @@ import org.springframework.context.annotation.Configuration;
 	"org.apache.shiro.spring.config.web.autoconfigure.ShiroWebFilterConfiguration",  // shiro-spring-boot-web-starter
 	"org.apache.shiro.spring.boot.ShiroBizWebFilterConfiguration" // spring-boot-starter-shiro-biz
 })
+/**
+ * <p>Configuration properties.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ */
 @ConditionalOnProperty(prefix = ShiroQrcodeProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties({ ShiroQrcodeProperties.class })
 public class ShiroQrcodeWebFilterConfiguration implements ApplicationContextAware {
@@ -31,10 +37,21 @@ public class ShiroQrcodeWebFilterConfiguration implements ApplicationContextAwar
 	
 	
 	@Override
+	/**
+	 * Sets the application context.
+	 *
+	 * @param applicationContext the application context
+	 * @throws BeansException if an error occurs
+	 */
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		this.applicationContext = applicationContext;
 	}
 
+	/**
+	 * Returns the application context.
+	 *
+	 * @return the application context
+	 */
 	public ApplicationContext getApplicationContext() {
 		return applicationContext;
 	}

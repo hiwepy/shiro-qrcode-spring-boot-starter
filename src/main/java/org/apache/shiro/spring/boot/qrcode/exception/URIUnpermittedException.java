@@ -20,6 +20,7 @@ import org.apache.shiro.authc.AuthenticationException;
 /**
  * URI未授权异常
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 public class URIUnpermittedException extends AuthenticationException {
 

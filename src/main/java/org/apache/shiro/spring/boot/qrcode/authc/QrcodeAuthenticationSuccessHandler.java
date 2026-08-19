@@ -45,6 +45,12 @@ public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccess
 	}
 
 	@Override
+	/**
+	 * supports.
+	 *
+	 * @param token the token
+	 * @return the result
+	 */
 	public boolean supports(AuthenticationToken token) {
 		return SubjectUtils.isAssignableFrom(token.getClass(), QrcodeAuthenticationToken.class);
 	}
@@ -69,6 +75,11 @@ public class QrcodeAuthenticationSuccessHandler implements AuthenticationSuccess
 	}
 
 	@Override
+	/**
+	 * Returns the order.
+	 *
+	 * @return the order
+	 */
 	public int getOrder() {
 		return Integer.MAX_VALUE - 4;
 	}

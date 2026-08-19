@@ -120,10 +120,20 @@ public class ShiroQrcodeEndpoint {
 		}
 	}
 	
+	/**
+	 * Returns the string redis template.
+	 *
+	 * @return the string redis template
+	 */
 	public StringRedisTemplate getStringRedisTemplate() {
 		return stringRedisTemplate;
 	}
 
+	/**
+	 * Returns the qrcode template.
+	 *
+	 * @return the qrcode template
+	 */
 	public ZxingQrCodeTemplate getQrcodeTemplate() {
 		return qrcodeTemplate;
 	}

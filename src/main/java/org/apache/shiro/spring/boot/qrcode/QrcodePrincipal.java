@@ -20,6 +20,7 @@ import org.apache.shiro.biz.authz.principal.ShiroPrincipal;
 /**
  * TODO
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
  */
 @SuppressWarnings("serial")
 public class QrcodePrincipal extends ShiroPrincipal {
@@ -29,10 +30,20 @@ public class QrcodePrincipal extends ShiroPrincipal {
 	 */
 	protected String uuid;
 
+	/**
+	 * Returns the uuid.
+	 *
+	 * @return the uuid
+	 */
 	public String getUuid() {
 		return uuid;
 	}
 
+	/**
+	 * Sets the uuid.
+	 *
+	 * @param uuid the uuid
+	 */
 	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
